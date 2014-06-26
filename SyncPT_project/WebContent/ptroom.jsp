@@ -213,7 +213,7 @@
 	
     function pSlide_next() {   
 		var index = document.getElementById("s_index").value;
-		var max = document.getElementById("slide_max").value;		
+		var max = document.getElementById("s_max").value;		
     	if(parseInt(index)<parseInt(max)) {
     		var t = "#" + index;
     		$(t).attr('style',"display:none;");
