@@ -16,10 +16,22 @@ Features
 To do List
 --------
  * add voicechat with webRTC
- * convert webRTC source form node.js to jsp
  * more function on pointer (undo, redo, multiple check, add text)
  * turn over presentation control permission
+ * convert webRTC source form node.js to jsp
+  * table about progressing on webrtc
+| title                               | checking     |
+| ------------------------------------| ------------ |
+| practice node.js                    | Yes          |
+| use webrtc, socket.io(node.js)      | Yes          |
+| use WebSocket in JSP                | Yes          |
+| Convert webrtc for node.js -> jsp   | Doing..      |
+> ![webrtcTest](http://oi62.tinypic.com/mct21h.jpg "wetRTCimg")
+> `test webrtc with node.js`
+> `clients are Nexus 7(Top) and Galaxy S2(Bottom)`
+> `TextArea is to show exchanged message SendArea(left), ReceiveArea(Right)`
 
+ 
 License
 -------
 Distributed under Apache License v2.0
