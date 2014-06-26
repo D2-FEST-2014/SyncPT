@@ -101,6 +101,7 @@
 			
 	      	document.getElementById("slide_img").src = ".\\uploadStorage\\" + "${access_code}" + "\\" + filename;
 	      	document.getElementById("slide_i").value = "1"; // 현재 인덱스 표시
+		$('#len').html(strArray[2]);
 	      	
 			// strArray[3]가  guest면 참여자. 
 			if(strArray[3]=="guest") {
