@@ -1,0 +1,18 @@
+﻿1. screenfull.js (MIT)
+https://github.com/sindresorhus/screenfull.js
+
+2. apache POI (Apache 2)
+http://poi.apache.org
+
+3. Apache Common (Apache 2)
+http://docs.oracle.com/cd/E17952_01/mysql-monitor-2.3-en/license-apache-commons-fileupload.html
+ 1) Commons-fileupload
+http://commons.apache.org/proper/commons-fileupload
+ 2) Commons-io
+http://commons.apache.org/proper/commons-io
+
+4. jQuery (MIT)
+https://jquery.org/license
+
+5. JSON (JSON)
+http://www.json.org/license.html
