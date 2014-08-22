@@ -24,7 +24,7 @@ public class Signaler extends Verticle {
 	private DBofSyncPT db = new DBofSyncPT();
 	
 	public void start() {
-		port = 8888;
+		port = 8080;
 		HttpServer server = vertx.createHttpServer();
 		
 		io = new DefaultSocketIOServer(vertx, server);

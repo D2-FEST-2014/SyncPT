@@ -116,7 +116,7 @@
 								</div>
 							</div>
 							<div>
-								<a href="http://220.69.203.93:8080/SyncPT_project/Access?access_code=${access_code}${media_type}" class="start_button" onclick="copyThis(); return false;">링크 공유</a>
+								<a href="http://220.69.203.93/SyncPT_project/Access?access_code=${access_code}${media_type}" class="start_button" onclick="copyThis(); return false;">링크 공유</a>
 							</div>
 							<div>
 								<input type="button" class="start_button" value="미디어 연결" id="trySignalButton" onclick="trySignaling()" />
@@ -325,7 +325,7 @@ meeting.onaddstream = function (e) {
     // anything! etc.
 meeting.openSignalingChannel = function (callback) {
     'use strict';
-    sock = io.connect('http://220.69.203.93:8888/').on('message', callback);
+    sock = io.connect('http://220.69.203.93:8080/').on('message', callback);
     return sock;
 };
 
@@ -921,7 +921,7 @@ function c_Accept(receiver) {
 function copyThis() {
     'use strict';
     var url;
-    url = 'http://220.69.203.93:8080/SyncPT_project/Access?access_code=${access_code}${media_type}';
+    url = 'http://220.69.203.93/SyncPT_project/Access?access_code=${access_code}${media_type}';
     prompt('Ctrl + C를 누르시면 복사를 할 수있습니다.\n모바일 브라우저는 현재 창을 닫고 \n공유 버튼을 롱 클릭 하여 \n링크 복사를 선택해 주십시오.', url);
 }
 
