@@ -1,10 +1,10 @@
 ﻿1. screenfull.js (MIT)
 https://github.com/sindresorhus/screenfull.js
 
-2. apache POI (Apache 2)
+2. apache POI (Apache 2.0)
 http://poi.apache.org
 
-3. Apache Common (Apache 2)
+3. Apache Common (Apache 2.0)
 http://docs.oracle.com/cd/E17952_01/mysql-monitor-2.3-en/license-apache-commons-fileupload.html
  1) Commons-fileupload
 http://commons.apache.org/proper/commons-fileupload
@@ -16,3 +16,22 @@ https://jquery.org/license
 
 5. JSON (JSON)
 http://www.json.org/license.html
+
+6. Vert.x (Eclipse Public License - v 1.0)
+https://github.com/eclipse/vert.x
+
+7. Vert.x Socket.IO Module (Apache 2.0)
+https://github.com/keesun/mod-socket-io
+
+8. Apache PDFBox (Apache 2.0)
+https://pdfbox.apache.org/
+
+9. Socket.io (MIT)
+https://github.com/Automattic/socket.io
+
+10. meeting.js (MIT)
+ 1) https://github.com/muaz-khan/WebRTC-Experiment
+ 2) https://www.webrtc-experiment.com/
+
+11. webRTC
+ http://www.webrtc.org/license-rights/license
