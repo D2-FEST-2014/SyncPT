@@ -6,15 +6,15 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
+import org.vertx.java.core.json.JsonObject;
 
+import Converter.PDF_Converter;
+import Converter.PPT_Converter;
 import SyncPT.Model.DBofSyncPT;
-import SyncPT.Model.ToImage;
 import SyncPT.Model.Random_Key;
 
 import com.oreilly.servlet.MultipartRequest;
@@ -28,7 +28,6 @@ public class FileUpload extends HttpServlet {
      */
     public FileUpload() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -36,7 +35,6 @@ public class FileUpload extends HttpServlet {
 	 */
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		request.setCharacterEncoding("UTF-8");
 	    response.setCharacterEncoding("UTF-8");	    
 	    
@@ -46,7 +44,7 @@ public class FileUpload extends HttpServlet {
 		Random_Key r = new Random_Key(); // 랜덤키 생성 
 		String access_code = r.asciiout(7);  // 엑세스 코드를 랜덤하게 생성해줌.     
 		String Img_type = "jpg"; // 이미지 파일 파입
-			 
+			System.out.println("access_code: ->>>>>>>>>>>>>>>>>>>>>>>>>> "+ access_code);
 		db.create_Room(access_code); // 엑세스 코드로 방 개설(db)
 		
 		// uploadStroage(서버측 업로드 파일 관리 폴더)의 실제 경로 가져오기 
@@ -66,24 +64,48 @@ public class FileUpload extends HttpServlet {
 	    	String name = (String)files.nextElement();
 	    	String filename = mRequest.getFilesystemName(name);    	
 	    	
-			String tmp = uploadPath + "\\" + filename; 
-			ToImage cvtImage = new ToImage(uploadPath,filename); // (저장경로,파일이름)
+			//String tmp = uploadPath + "\\" + filename; 
 			
-			try {
-				count = cvtImage.convter(Img_type); // 슬라이드 수 반환
-				db.upload_file(access_code, filename, count); // 파일 정보 DB에 저장(엑세스 코드, 파일 이름, 슬라이드 수)	
-				
-				url = ".\\uploadStorage\\" + access_code + "\\" + filename +"-1."+ Img_type;
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			String[] temp = filename.split("\\.");		
+			String fileType = temp[temp.length-1];
+			
+			if(fileType.equals("pdf")) {
+				PDF_Converter cvtImage = new PDF_Converter(uploadPath,filename);
+				try {
+					count = cvtImage.pdftoimage(Img_type);
+					db.upload_file(access_code, filename, count); // 파일 정보 DB에 저장(엑세스 코드, 파일 이름, 슬라이드 수)	
+					
+					url = ".\\uploadStorage\\" + access_code + "\\" + filename +"-1."+ Img_type;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
-	    }    
+			else {
+				PPT_Converter cvtImage = new PPT_Converter(uploadPath,filename); // (저장경로,파일이름)
+				
+				try {
+					if(fileType.equals("ppt")) {
+						count = cvtImage.ppttoimage(Img_type); // 슬라이드 수 반환
+						db.upload_file(access_code, filename, count); // 파일 정보 DB에 저장(엑세스 코드, 파일 이름, 슬라이드 수)	
+						
+						url = ".\\uploadStorage\\" + access_code + "\\" + filename +"-1."+ Img_type;
+					}
+					else {
+						count = cvtImage.pptxtoimage(Img_type); // 슬라이드 수 반환
+						db.upload_file(access_code, filename, count); // 파일 정보 DB에 저장(엑세스 코드, 파일 이름, 슬라이드 수)	
+						
+						url = ".\\uploadStorage\\" + access_code + "\\" + filename +"-1."+ Img_type;
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}    
 	    
 	    
-	    JSONObject result = new JSONObject();
-	    result.put("resulturl", url);	
-	    result.put("access_code", access_code);
+	    JsonObject result = new JsonObject();
+	    result.putString("resulturl", url);	
+	    result.putString("access_code", access_code);
 	    
 	    PrintWriter out = response.getWriter();
 	    out.write(result.toString());

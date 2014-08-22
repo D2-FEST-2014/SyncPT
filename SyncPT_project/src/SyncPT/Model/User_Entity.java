@@ -2,7 +2,7 @@ package SyncPT.Model;
 
 public class User_Entity {
 	private String name; // 유저 이름
-	private String w_sess; // 웹 소켓 세션 id
+	private String u_id; // 유저 id
 	
 	public String getName() {
 		return name;
@@ -10,10 +10,10 @@ public class User_Entity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getW_sess() {
-		return w_sess;
+	public String getU_id() {
+		return u_id;
 	}
-	public void setW_sess(String w_sess) {
-		this.w_sess = w_sess;
+	public void setU_id(String u_id) {
+		this.u_id = u_id;
 	}	
 }
