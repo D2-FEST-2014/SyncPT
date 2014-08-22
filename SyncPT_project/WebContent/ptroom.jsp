@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ï»¿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -22,22 +22,22 @@
 			<div style="height: 100%; width: 100%; padding-bottom: 40px; box-sizing: border-box;">
 				<div style="height: 100%; width: 100%; float: left;">
 					<div style="float: right; height: 100%; position: relative;">
-						<input type="button" value="¢º" id="leftBarButton" onclick="leftBarOpen(this)" />
+						<input type="button" value="â–¶" id="leftBarButton" onclick="leftBarOpen(this)" />
 					</div>
 					<div style="float: right; height: 100%; width: 100%;">
 						<div style="width: 100%; height: 7%; box-sizing: border-box;">
 							<c:choose>
 								<c:when test="${ u_type == 'host'}">
-									<input id="show_button" type="button" class="start_button" value="½ÃÀÛ" onclick="Slide_show()" />
+									<input id="show_button" type="button" class="start_button" value="ì‹œì‘" onclick="Slide_show()" />
 								</c:when>
 								<c:otherwise>
-									<input id="request_button" type="button" class="start_button" value="±ÇÇÑ ¿äÃ»" onclick="c_Request()" style="display: none;" />
+									<input id="request_button" type="button" class="start_button" value="ê¶Œí•œ ìš”ì²­" onclick="c_Request()" style="display: none;" />
 								</c:otherwise>
 							</c:choose>
 						</div>
 						<div style="width: 100%; height: 93%; padding: 2%; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.4); position: relative;">
 							<div style="color: cornflowerblue;">
-								<div>ÆÄÀÏ ¼±ÅÃ</div>
+								<div>íŒŒì¼ ì„ íƒ</div>
 								<div>
 									<select id="pt_select" onchange="Select_PPT(this.value)" style="width:100%; height:3vmin;">
 										<c:set var="index" value="0"></c:set>
@@ -49,7 +49,7 @@
 								</div>
 							</div>
 							<div id="inkPalette">
-								<div>À×Å© ÁÖ¼®</div>
+								<div>ì‰í¬ ì£¼ì„</div>
 								<div style="width: 90%; position: relative; float: left;">
 									<div style="float: left; width: 50%; height: 100%;">
 										<div class="box">
@@ -90,22 +90,22 @@
 									style="right: 0; width: 45%; box-sizing: border-box; position: absolute; overflow: hidden;">
 									<div class="box2">
 										<div class="content">
-											<input type="button" class="ink_button" value="Áö¿ì±â" onclick="erase()" />
+											<input type="button" class="ink_button" value="ì§€ìš°ê¸°" onclick="erase()" />
 										</div>
 									</div>
 									<div class="box2">
 										<div class="content">
-											<input type="button" class="ink_button" value="¼û±â±â" onclick="hideCanvas()" />
+											<input type="button" class="ink_button" value="ìˆ¨ê¸°ê¸°" onclick="hideCanvas()" />
 										</div>
 									</div>
 									<div class="box2">
 										<div class="content">
-											<input type="button" class="ink_button" value="½ÇÇàÃë¼Ò" onclick="undoCanvas()" />
+											<input type="button" class="ink_button" value="ì‹¤í–‰ì·¨ì†Œ" onclick="undoCanvas()" />
 										</div>
 									</div>
 									<div class="box2">
 										<div class="content">
-											<input type="button" class="ink_button" value="´Ù½Ã½ÇÇà" onclick="redoCanvas()" />
+											<input type="button" class="ink_button" value="ë‹¤ì‹œì‹¤í–‰" onclick="redoCanvas()" />
 										</div>
 									</div>
 									<div style="width: 191%;">
@@ -116,13 +116,13 @@
 								</div>
 							</div>
 							<div>
-								<a href="http://220.69.203.93/SyncPT_project/Access?access_code=${access_code}${media_type}" class="start_button" onclick="copyThis(); return false;">¸µÅ© °øÀ¯</a>
+								<a href="http://220.69.203.93/SyncPT_project/Access?access_code=${access_code}${media_type}" class="start_button" onclick="copyThis(); return false;">ë§í¬ ê³µìœ </a>
 							</div>
 							<div>
-								<input type="button" class="start_button" value="¹Ìµğ¾î ¿¬°á" id="trySignalButton" onclick="trySignaling()" />
+								<input type="button" class="start_button" value="ë¯¸ë””ì–´ ì—°ê²°" id="trySignalButton" onclick="trySignaling()" />
 							</div>
 							<div>
-								<a class="start_button" id="download_path" href="#" onclick="window.open(this.href, '', ''); return false;">ÆÄÀÏ ´Ù¿î·Îµå</a>
+								<a class="start_button" id="download_path" href="#" onclick="window.open(this.href, '', ''); return false;">íŒŒì¼ ë‹¤ìš´ë¡œë“œ</a>
 							</div>
 						</div>
 					</div>
@@ -131,7 +131,7 @@
 		</div>
 		<div id="right_bar">
 			<div style="float: left; height: 100%; position: relative; background: red;">
-				<input type="button" value="¢º" id="rightBarButton" onclick="rightBarOpen(this)" />
+				<input type="button" value="â–¶" id="rightBarButton" onclick="rightBarOpen(this)" />
 			</div>
 			<div style="float: left; width: 100%; height: 100%; overflow: hidden; position: relative;">
 				<div class="box3" id="mediaBox1">
@@ -230,25 +230,25 @@
 		<img id="full_button" alt="full screen" title="full screen" src="./image/full.png" style="width: 36px; height: 36px;" />
 	</div>
 	<div style="position: fixed; bottom: 0; right: 50px; height: 40px; width: 40px; z-index: 301;"> 
-		<input type="button" value="¡å" id="chat_wrapButton" style="float: left;" onclick="chatwrapOpen(this)" />
+		<input type="button" value="â–¼" id="chat_wrapButton" style="float: left;" onclick="chatwrapOpen(this)" />
 	</div>
 	<script type="text/javascript">
 var u_id = '${u_id}';
 var u_name = '${u_name}';
 var user_type = '${u_type}';
-var slideshow_status = false; // ½½¶óÀÌµå¼î ÁøÇà»óÅÂ 
-var slideshow_file; // ½½¶óÀÌµå¼î ÁøÇàµÇ´Â ÆÄÀÏ ÀÌ¸§
-var slideshow_index = 1; // ½½¶óÀÌµå¼î ÀÎµ¦½º 
-var slideshow_max; // ½½¶óÀÌµå¼î ÆÄÀÏ ½½¶óÀÌµå Àå ¼ö
+var slideshow_status = false; // ìŠ¬ë¼ì´ë“œì‡¼ ì§„í–‰ìƒíƒœ 
+var slideshow_file; // ìŠ¬ë¼ì´ë“œì‡¼ ì§„í–‰ë˜ëŠ” íŒŒì¼ ì´ë¦„
+var slideshow_index = 1; // ìŠ¬ë¼ì´ë“œì‡¼ ì¸ë±ìŠ¤ 
+var slideshow_max; // ìŠ¬ë¼ì´ë“œì‡¼ íŒŒì¼ ìŠ¬ë¼ì´ë“œ ì¥ ìˆ˜
 
-var file_name = '${file_name}'; // »ç¿ëÀÚ°¡ ¼±ÅÃÇÑ ÆÄÀÏ ÀÌ¸§ 
-var slide_max = '${slide_count}'; // ¼±ÅÃÇÑ ÆÄÀÏ ½½¶óÀÌµåÀÇ ÀüÃ¼ ¼ö   
-var slide_index = 1; // ¸ŞÀÎ ºä¾î ½½¶óÀÌµå ÀÎµ¦½º
+var file_name = '${file_name}'; // ì‚¬ìš©ìê°€ ì„ íƒí•œ íŒŒì¼ ì´ë¦„ 
+var slide_max = '${slide_count}'; // ì„ íƒí•œ íŒŒì¼ ìŠ¬ë¼ì´ë“œì˜ ì „ì²´ ìˆ˜   
+var slide_index = 1; // ë©”ì¸ ë·°ì–´ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤
 
-var sub_index = 1; // ÇÏ´Ü ºä¾î ½½¶óÀÌµå ÀÎµ¦½º
-var sub_slide_max = 1; // ÇÏ´Ü ºä¾î ½½¶óÀÌµå ÀüÃ¼ ¼ö
+var sub_index = 1; // í•˜ë‹¨ ë·°ì–´ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤
+var sub_slide_max = 1; // í•˜ë‹¨ ë·°ì–´ ìŠ¬ë¼ì´ë“œ ì „ì²´ ìˆ˜
 
-//rtc°ü·Ã
+//rtcê´€ë ¨
 var media_type = '${media_type}'; //
 var isOpen = '${isopen}';
 
@@ -257,11 +257,11 @@ var conntype;
 var sock;
 var trySignalActive = false;
 
-//±ÇÇÑ ¿äÃ» °ü·Ã
-var request_list = new Array(); // ±ÇÇÑ ¿äÃ» ÁßÀÎ Âü¿©ÀÚµé 
-var request_user; // ±ÇÇÑÀ» ºÎ¿©¹ŞÀº Âü¿©ÀÚ
+//ê¶Œí•œ ìš”ì²­ ê´€ë ¨
+var request_list = new Array(); // ê¶Œí•œ ìš”ì²­ ì¤‘ì¸ ì°¸ì—¬ìë“¤ 
+var request_user; // ê¶Œí•œì„ ë¶€ì—¬ë°›ì€ ì°¸ì—¬ì
 
-///////////Äµ¹ö½º Àü¿ªº¯¼ö ///////////
+///////////ìº”ë²„ìŠ¤ ì „ì—­ë³€ìˆ˜ ///////////
 var canvas, ctx, w, h, flag = false;
 var prevX = 0;
 var currX = 0;
@@ -273,7 +273,7 @@ var slide_img = document.getElementById('slide_img');
 canvas = document.getElementById('can');
 ctx = canvas.getContext("2d");
 
-// Äµ¹ö½º °ü·Ã
+// ìº”ë²„ìŠ¤ ê´€ë ¨
 var target = $('body')[0];
 
 if (media_type === '0') {
@@ -293,13 +293,13 @@ if (media_type === '0') {
     conntype = false;
 }
 
-//rtc°ü·Ã
-var hash = '${access_code}'; // ¿¢¼¼½º ÄÚµå
+//rtcê´€ë ¨
+var hash = '${access_code}'; // ì—‘ì„¸ìŠ¤ ì½”ë“œ
 var meeting = new Meeting(hash, brtype, conntype, u_id);
 
 var localMediaStream = document.getElementById('local_media');
 var remoteMediaStreams = document.getElementById('remote_media');
-var localstream; // Åä±Û ¹öÆ° µ¿ÀÛ À§ÇØ¼­ ½ºÆ®¸² ÀúÀå
+var localstream; // í† ê¸€ ë²„íŠ¼ ë™ì‘ ìœ„í•´ì„œ ìŠ¤íŠ¸ë¦¼ ì €ì¥
 
 if (user_type === 'host') {
     document.getElementById('inkPalette').style.display = 'block';
@@ -348,7 +348,7 @@ meeting.onuserleft = function (message) {
         element.parentNode.removeChild(element);
     }
     else {
-        alert("¹æÀåÀÌ È¸ÀÇ¸¦ Á¾·á½ÃÄ×½À´Ï´Ù. ¸ŞÀÎ È­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+        alert("ë°©ì¥ì´ íšŒì˜ë¥¼ ì¢…ë£Œì‹œì¼°ìŠµë‹ˆë‹¤. ë©”ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
         location.href='index.jsp';
     }
 };
@@ -356,12 +356,12 @@ meeting.onuserleft = function (message) {
     // check pre-created meeting rooms
     // it is useful to auto-join
     // or search pre-created sessions
-    // 0´Ü°è
+    // 0ë‹¨ê³„
     // signaler Init for client
-meeting.check(); // ²ÀÇÊ¿äÇÔ
+meeting.check(); // ê¼­í•„ìš”í•¨
 
-    // 1´Ü°è
-    // ¹æÀåÀÌ¸é ¸ÕÀú ¹æÀ» »ı¼ºÇÑ´Ù.
+    // 1ë‹¨ê³„
+    // ë°©ì¥ì´ë©´ ë¨¼ì € ë°©ì„ ìƒì„±í•œë‹¤.
 meeting.enterroom(hash, u_id);
 
 if (media_type === '0') {
@@ -389,23 +389,23 @@ if (media_type === '0') {
 
 //////////////////////////////////////////////////////////////////////////
 console.log(media_type + ' : ' + isOpen);
-// 2´Ü°è
-if ((brtype !== 'none') && (navigator.mozGetUserMedia || navigator.webkitGetUserMedia)) { // ¹Ìµğ¾î¸¦ »ç¿ëÇÑ´Ù. 
-    if (user_type === 'host') { // ¹æÀå
-        meeting.setup(hash, isOpen); // ¹æÀå
-    } else { // Âü¿©ÀÚ
+// 2ë‹¨ê³„
+if ((brtype !== 'none') && (navigator.mozGetUserMedia || navigator.webkitGetUserMedia)) { // ë¯¸ë””ì–´ë¥¼ ì‚¬ìš©í•œë‹¤. 
+    if (user_type === 'host') { // ë°©ì¥
+        meeting.setup(hash, isOpen); // ë°©ì¥
+    } else { // ì°¸ì—¬ì
         meeting.onmeeting(hash);
     }
 }
 
-// 3´Ü°è
-// ¹æÁ¤º¸ ÃÊ±âÈ­
+// 3ë‹¨ê³„
+// ë°©ì •ë³´ ì´ˆê¸°í™”
 if (user_type !== 'host') {
     meeting.tryOfferInfo(hash, u_id);
 }
 
-    // 4´Ü°è
-    // ¹æ °ø°³ flag ¼öÁ¤
+    // 4ë‹¨ê³„
+    // ë°© ê³µê°œ flag ìˆ˜ì •
 
 $('#full_button').click(function () {
     if (screenfull.enabled) {
@@ -417,20 +417,20 @@ $('#full_button').click(function () {
         $('#full_button').attr('src', './image/full.png');
     }
 });
-$('#chat').keypress(function (e) { //Å©·Ò ºê¶ó¿ìÀú escÀÌº¥Æ® 1È¸ ¹«½Ã ¹æÁö (ÀÌ¹ÌÁö Åä±Û ¾ÈµÊ ¹æÁö)
+$('#chat').keypress(function (e) { //í¬ë¡¬ ë¸Œë¼ìš°ì € escì´ë²¤íŠ¸ 1íšŒ ë¬´ì‹œ ë°©ì§€ (ì´ë¯¸ì§€ í† ê¸€ ì•ˆë¨ ë°©ì§€)
     'use strict';
     if (e.keyCode === 13) {
         Chat_msg();
     }
 });
 
-$(document).keyup(function (e) { //Å©·Ò ºê¶ó¿ìÀú escÀÌº¥Æ® 1È¸ ¹«½Ã ¹æÁö (ÀÌ¹ÌÁö Åä±Û ¾ÈµÊ ¹æÁö)
+$(document).keyup(function (e) { //í¬ë¡¬ ë¸Œë¼ìš°ì € escì´ë²¤íŠ¸ 1íšŒ ë¬´ì‹œ ë°©ì§€ (ì´ë¯¸ì§€ í† ê¸€ ì•ˆë¨ ë°©ì§€)
     'use strict';
     if (e.keyCode === 27) {
         $('#full_button').attr('src', './image/full.png');
     }
 });
-$(document).keydown(function (e) { //f11 ÀüÃ¼È­¸é ¹«½Ã (Åä±Û ÀÌ¹ÌÁö ¹× screenfull.js ¹ö±× ¹æÁö)
+$(document).keydown(function (e) { //f11 ì „ì²´í™”ë©´ ë¬´ì‹œ (í† ê¸€ ì´ë¯¸ì§€ ë° screenfull.js ë²„ê·¸ ë°©ì§€)
     'use strict';
     if (e.keyCode === 122) {
         e.preventDefault();
@@ -608,7 +608,7 @@ function color(obj) {
 function erase() {
     'use strict';
     if (user_type === 'host') {
-        var m = confirm("¸ğµÎ Áö¿ì½Ã°Ù½À´Ï±î?");
+        var m = confirm("ëª¨ë‘ ì§€ìš°ì‹œê²ŸìŠµë‹ˆê¹Œ?");
 
         if (m) {
             pageList[slideshow_index] = {};
@@ -659,7 +659,7 @@ function hideCanvas() {
         meeting.syncPoint('hide', hash, undefined);
     }
 }
-////////Äµ¹ö½º ÇÔ¼ö ³¡//////////
+////////ìº”ë²„ìŠ¤ í•¨ìˆ˜ ë//////////
       /*
        0 : none
        1 : audio + 1:n
@@ -674,47 +674,47 @@ function chatwrapOpen(e) {
     var chatwrap = document.getElementById('chat_wrap');
     var chatwrapbutton = document.getElementById('chat_wrapButton');
     
-    if (e.value === '¡å') {
+    if (e.value === 'â–¼') {
     	chatwrap.style.bottom = '-20%';
-        e.value = '¡ã';
+        e.value = 'â–²';
     } else {
     	chatwrap.style.bottom = '40px';
-        e.value = '¡å';
+        e.value = 'â–¼';
     }
 }
        
 function leftBarOpen(e) {
     'use strict';
     var leftBar = document.getElementById('left_bar');
-    if (e.value === '¢¸') {
+    if (e.value === 'â—€') {
         leftBar.style.left = '-20%';
-        e.value = '¢º';
+        e.value = 'â–¶';
     } else {
         leftBar.style.left = '0';
-        e.value = '¢¸';
+        e.value = 'â—€';
     }
 }
 function rightBarOpen(e) {
     'use strict';
     var rightBar = document.getElementById('right_bar');
-    if (e.value === '¢º') {
+    if (e.value === 'â–¶') {
         rightBar.style.right = '-15%';
-        e.value = '¢¸';
+        e.value = 'â—€';
     } else {
         rightBar.style.right = '0';
-        e.value = '¢º';
+        e.value = 'â–¶';
     }
 }
 
-    // ppt ¼±ÅÃ
+    // ppt ì„ íƒ
 function Select_PPT(value) {
     'use strict';
 
-    //³ª¸¸ÇÏ¸éµÊ
+    //ë‚˜ë§Œí•˜ë©´ë¨
     meeting.selectfile(hash, value);
 }
 
-    // Ã¤ÆÃ ¸Ş¼¼Áö Àü¼Û
+    // ì±„íŒ… ë©”ì„¸ì§€ ì „ì†¡
 function Chat_msg() {
     'use strict';
     var chat_msg = document.getElementById('chat').value;
@@ -726,7 +726,7 @@ function Chat_msg() {
     meeting.chat(hash, chat_msg, u_name);
 }
 
-    // ppt ÀÌÀü ÆäÀÌÁö·Î
+    // ppt ì´ì „ í˜ì´ì§€ë¡œ
 function Slide_pre() {
     'use strict';
     var filename, index;
@@ -746,11 +746,11 @@ function Slide_pre() {
             filename = file_name + '-' + slide_index + '.jpg';
         }
         slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename;
-        document.getElementById('slide_i').value = index; // ÇöÀç ½½¶óÀÌµå ÀÎµ¦½º ¹øÈ£ Ç¥½Ã
+        document.getElementById('slide_i').value = index; // í˜„ì¬ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤ ë²ˆí˜¸ í‘œì‹œ
     }
 }
 
-    // ppt ´ÙÀ½ ÆäÀÌÁö·Î
+    // ppt ë‹¤ìŒ í˜ì´ì§€ë¡œ
 function Slide_next() {
     'use strict';
     var filename, index;
@@ -766,7 +766,7 @@ function Slide_next() {
             meeting.control(hash, index);
             
             slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename;
-            document.getElementById('slide_i').value = index; // ÇöÀç ½½¶óÀÌµå ÀÎµ¦½º ¹øÈ£ Ç¥½Ã
+            document.getElementById('slide_i').value = index; // í˜„ì¬ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤ ë²ˆí˜¸ í‘œì‹œ
         }
     } else {
         if (parseInt(index, 10) < slide_max) {            
@@ -775,12 +775,12 @@ function Slide_next() {
             filename = file_name + '-' + slide_index + '.jpg';
             
             slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename;
-            document.getElementById('slide_i').value = index; // ÇöÀç ½½¶óÀÌµå ÀÎµ¦½º ¹øÈ£ Ç¥½Ã
+            document.getElementById('slide_i').value = index; // í˜„ì¬ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤ ë²ˆí˜¸ í‘œì‹œ
         }
     }
 }
 
-    // ¹Ì´Ï ºä ÀÌÀüÆäÀÌÁö
+    // ë¯¸ë‹ˆ ë·° ì´ì „í˜ì´ì§€
 function pSlide_pre() {
     'use strict';
     var t;
@@ -793,7 +793,7 @@ function pSlide_pre() {
     }
 }
 
-    // ¹Ì´Ï ºä ´ÙÀ½ÆäÀÌÁö
+    // ë¯¸ë‹ˆ ë·° ë‹¤ìŒí˜ì´ì§€
 function pSlide_next() {
     'use strict';
     //var index = sub_index;
@@ -807,28 +807,28 @@ function pSlide_next() {
     }
 }
 
-    // ½½¶óÀÌµå ¼î ½ÃÀÛÇÏ±â
+    // ìŠ¬ë¼ì´ë“œ ì‡¼ ì‹œì‘í•˜ê¸°
 function Slide_show() {
     'use strict';
     var filename;
     $('#show_button').attr('onclick', 'Slide_stop()');
-    $('#show_button').attr('value', 'Á¾·á');
-    slideshow_status = true; // ½½¶óÀÌµå¼î ÁøÇà »óÅÂ·Î º¯°æ
+    $('#show_button').attr('value', 'ì¢…ë£Œ');
+    slideshow_status = true; // ìŠ¬ë¼ì´ë“œì‡¼ ì§„í–‰ ìƒíƒœë¡œ ë³€ê²½
     slideshow_file = file_name;
     slideshow_max = slide_max;
     slideshow_index = 1;
 
     filename = slideshow_file + '-1.jpg';
 
-    slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename; // ½½¶óÀÌµå ÀÌ¹ÌÁö
-    document.getElementById('slide_i').value = '1'; // ÇöÀç ÀÎµ¦½º Ç¥½Ã
-    $('#len').html(slideshow_max); // ÃÑ ½½¶óÀÌµå Àå ¼ö
+    slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename; // ìŠ¬ë¼ì´ë“œ ì´ë¯¸ì§€
+    document.getElementById('slide_i').value = '1'; // í˜„ì¬ ì¸ë±ìŠ¤ í‘œì‹œ
+    $('#len').html(slideshow_max); // ì´ ìŠ¬ë¼ì´ë“œ ì¥ ìˆ˜
 
     $('#preview').attr('style', 'display:none;');
     sub_slide_max = slide_max;
     sub_index = 1;
 
-    // ÇÏ´Ü ½½¶óÀÌµå ºä¾î
+    // í•˜ë‹¨ ìŠ¬ë¼ì´ë“œ ë·°ì–´
     $('#test').html('');
     for (var i = 1; i <= slideshow_max; i += 1) {
         var file = './uploadStorage/' + '${access_code}' + '/' + slideshow_file + '-' + i + '.jpg';
@@ -836,7 +836,7 @@ function Slide_show() {
     }
     $('#pt_select').attr('style', 'width:0px;');
 
-    // ÇÏ´Ü ½½¶óÀÌµå È­¸é È°¼ºÈ­
+    // í•˜ë‹¨ ìŠ¬ë¼ì´ë“œ í™”ë©´ í™œì„±í™”
     $('#slide1').attr('style', 'display:block;');
     $('#before_p').attr('style', 'cursor: pointer; display:block;');
     $('#next_p').attr('style', 'cursor: pointer; display:block;');
@@ -845,13 +845,13 @@ function Slide_show() {
     meeting.slideShow(hash, file_name, slideshow_status);
 }
 
-     // ½½¶óÀÌµå ¼î Á¾·áÇÏ±â
+     // ìŠ¬ë¼ì´ë“œ ì‡¼ ì¢…ë£Œí•˜ê¸°
 function Slide_stop() {
     'use strict';
     var index;
     index = '#slide' + sub_index;
     $('#show_button').attr('onclick', 'Slide_show()');
-    $('#show_button').attr('value', '½ÃÀÛ');
+    $('#show_button').attr('value', 'ì‹œì‘');
     $(index).attr('style', 'display:none;');
     
     $('#test').html('');
@@ -866,44 +866,44 @@ function Slide_stop() {
     meeting.slideShow(hash, file_name, false);
 }
 
-// ±ÇÇÑ ¿äÃ»
+// ê¶Œí•œ ìš”ì²­
 function c_Request() {    
     $('#request_button').attr('onclick', 'Request_cancel()');
-    $('#request_button').attr('value', '¿äÃ» Ãë¼Ò');
+    $('#request_button').attr('value', 'ìš”ì²­ ì·¨ì†Œ');
     meeting.c_request(hash, u_id);
 }
 
-// °ÅÀı
+// ê±°ì ˆ
 function refuse(receiver) {
     var id, index;
        id = '#' + receiver + '_btn';
        $(id).html('');
        
-       // ±ÇÇÑ ¿äÃ» ¸®½ºÆ®¿¡¼­ Á¦°ÅÇÏ±â
+       // ê¶Œí•œ ìš”ì²­ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì œê±°í•˜ê¸°
     index = request_list.indexOf(receiver);
     request_list.splice(index,1);
        
     meeting.refuse(hash, receiver);
 }
      
-// ¿äÃ» Ãë¼Ò
+// ìš”ì²­ ì·¨ì†Œ
 function Request_cancel() {
     $('#request_button').attr('onclick', 'c_Request()');
-    $('#request_button').attr('value', '±ÇÇÑ ¿äÃ»');
+    $('#request_button').attr('value', 'ê¶Œí•œ ìš”ì²­');
     meeting.request_cancel(hash, u_id);
 }
      
-// ½½¶óÀÌµå ±ÇÇÑ ¿äÃ» Á¾·á(¹æÀåÀÌ)
+// ìŠ¬ë¼ì´ë“œ ê¶Œí•œ ìš”ì²­ ì¢…ë£Œ(ë°©ì¥ì´)
 function Request_stop(receiver) {
     meeting.request_stop(hash, receiver);
 }
 
-    // ¿äÃ» ¼ö¶ôÇÏ±â 
+    // ìš”ì²­ ìˆ˜ë½í•˜ê¸° 
 function c_Accept(receiver) {
     var id, index;
     request_user = receiver;
     id = '#' + receiver + '_btn';
-    $(id).html('<input type=\"button\" style=\"font-size:0.8em; float:right;\" value=\"Á¾·á\" onclick=\"Request_stop(\'' + receiver + '\')\"/>');
+    $(id).html('<input type=\"button\" style=\"font-size:0.8em; float:right;\" value=\"ì¢…ë£Œ\" onclick=\"Request_stop(\'' + receiver + '\')\"/>');
     
     index = request_list.indexOf(receiver);
     request_list.splice(index,1);
@@ -917,21 +917,21 @@ function c_Accept(receiver) {
     meeting.c_accept(hash, receiver);
 }
 
-    // url »ı¼º    
+    // url ìƒì„±    
 function copyThis() {
     'use strict';
     var url;
     url = 'http://220.69.203.93/SyncPT_project/Access?access_code=${access_code}${media_type}';
-    prompt('Ctrl + C¸¦ ´©¸£½Ã¸é º¹»ç¸¦ ÇÒ ¼öÀÖ½À´Ï´Ù.\n¸ğ¹ÙÀÏ ºê¶ó¿ìÀú´Â ÇöÀç Ã¢À» ´İ°í \n°øÀ¯ ¹öÆ°À» ·Õ Å¬¸¯ ÇÏ¿© \n¸µÅ© º¹»ç¸¦ ¼±ÅÃÇØ ÁÖ½Ê½Ã¿À.', url);
+    prompt('Ctrl + Cë¥¼ ëˆ„ë¥´ì‹œë©´ ë³µì‚¬ë¥¼ í•  ìˆ˜ìˆìŠµë‹ˆë‹¤.\nëª¨ë°”ì¼ ë¸Œë¼ìš°ì €ëŠ” í˜„ì¬ ì°½ì„ ë‹«ê³  \nê³µìœ  ë²„íŠ¼ì„ ë¡± í´ë¦­ í•˜ì—¬ \në§í¬ ë³µì‚¬ë¥¼ ì„ íƒí•´ ì£¼ì‹­ì‹œì˜¤.', url);
 }
 
-    // Áß°£¿¡ ½Ã±×³Î¸µ ½Ãµµ
+    // ì¤‘ê°„ì— ì‹œê·¸ë„ë§ ì‹œë„
 function trySignaling() {
     if ((user_type !== 'host') && (navigator.mozGetUserMedia || navigator.webkitGetUserMedia)) {
         if (trySignalActive) {
             meeting.onmeeting(hash);
         } else {
-            alert('¹Ìµğ¾î Á¢¼ÓÀÎ¿øÀÌ ÃÊ°úµÇ¾ú½À´Ï´Ù.');
+            alert('ë¯¸ë””ì–´ ì ‘ì†ì¸ì›ì´ ì´ˆê³¼ë˜ì—ˆìŠµë‹ˆë‹¤.');
         }
     }
 }
@@ -971,17 +971,17 @@ function volumeControl (evt) {
     }
 }
     
-    // ¹æ ÀÔÀå
+    // ë°© ì…ì¥
 sock.on('enter', function (data) {
     'use strict';    
-    if(data.userid === u_id) { // »õ·Î Á¢¼ÓÇÑ °æ¿ì
+    if(data.userid === u_id) { // ìƒˆë¡œ ì ‘ì†í•œ ê²½ìš°
         console.log(data);
         var i, list, filename;
         list = data.user_list;
         
-        $('#user_info').html(''); // Á¢¼ÓÀÚ ¸®½ºÆ® ÃÊ±âÈ­
+        $('#user_info').html(''); // ì ‘ì†ì ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         
-        // ¹æÀå, ÀÚ±âÀÚ½Å, ³ª¸ÓÁö ¼ø
+        // ë°©ì¥, ìê¸°ìì‹ , ë‚˜ë¨¸ì§€ ìˆœ
         if (data.host !== u_id) {
             $('#user_info').append('<div id=\"'+ data.host +'\" style=\"overflow: hidden; height:1.0em; width:100%; background-color:rgba(255,51,51,0.4); margin-top:2px; color:white;\">'
             + '<div class=\"textdot\" style=\"width:50%; float:left; font-size:0.8em; box_siging:border-box;\">' + data.hostname + '</div>'
@@ -1005,7 +1005,7 @@ sock.on('enter', function (data) {
         
         document.getElementById('download_path').setAttribute('href','.\\uploadStorage\\' + '${access_code}' + '\\' + file_name);        
     }
-    else { // ±âÁ¸¿¡ Á¢¼ÓÇÑ °æ¿ì 
+    else { // ê¸°ì¡´ì— ì ‘ì†í•œ ê²½ìš° 
         $('#user_info').append('<div id=\"'+ data.userid +'\" style=\"overflow: hidden; height:1.0em; width:100%; background-color:rgba(0,0,0,0.4); margin-top:2px; color:white;\">'
         + '<div class=\"textdot\" style=\"width:50%; float:left; font-size:0.8em; box_siging:border-box;\">' + data.user_name + '</div>'
         + '<div class=\"button_group\" style=\"height:1.0em; width:50%; float:left; font-size:0.8em; box_siging:border-box;\" id=\"'+ data.userid +'_btn\"></div></div>');
@@ -1017,23 +1017,23 @@ sock.on('page_control', function (data) {
     var filename;
     
     slideshow_index = data.index;
-    filename = slideshow_file + '-' + data.index + '.jpg';   // µ¿±âÈ­ x                   
+    filename = slideshow_file + '-' + data.index + '.jpg';   // ë™ê¸°í™” x                   
     slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename;
-    document.getElementById('slide_i').value = slideshow_index; // ÇöÀç ½½¶óÀÌµå ÀÎµ¦½º ¹øÈ£ Ç¥½Ã
+    document.getElementById('slide_i').value = slideshow_index; // í˜„ì¬ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤ ë²ˆí˜¸ í‘œì‹œ
     drawPage();
 });
 
 sock.on('select_file', function (data) {
     'use strict';
     var filename;
-    file_name = data.file; // ¼±ÅÃµÈ pptÆÄÀÏ ÀÌ¸§           
-    slide_max = data.count; // ¼±ÅÃÇÑ ÆÄÀÏ ½½¶óÀÌµåÀÇ ÀüÃ¼ ¼ö   
-    slide_index = 1; // ¸ŞÀÎ ºä¾î ½½¶óÀÌµå ÀÎµ¦½º 
+    file_name = data.file; // ì„ íƒëœ pptíŒŒì¼ ì´ë¦„           
+    slide_max = data.count; // ì„ íƒí•œ íŒŒì¼ ìŠ¬ë¼ì´ë“œì˜ ì „ì²´ ìˆ˜   
+    slide_index = 1; // ë©”ì¸ ë·°ì–´ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤ 
 
-    $('#len').html(slide_max); // ÃÑ ½½¶óÀÌµå °¹¼ö º¸¿©ÁÖ±â                          
-    filename = file_name + '-' + '1.jpg'; // ¼±ÅÃÇÑ pptÀÇ Ã¹¹øÂ° ½½¶óÀÌµå È­¸é ÀÌ¹ÌÁö
-    document.getElementById('slide_img').src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename; // ½½¶óÀÌµå Ã¹ È­¸é º¸¿©ÁÖ±â
-    document.getElementById('slide_i').value = '1'; // ÇöÀç ÆäÀÌÁö ½½¶óÀÌµå ¹øÈ£
+    $('#len').html(slide_max); // ì´ ìŠ¬ë¼ì´ë“œ ê°¯ìˆ˜ ë³´ì—¬ì£¼ê¸°                          
+    filename = file_name + '-' + '1.jpg'; // ì„ íƒí•œ pptì˜ ì²«ë²ˆì§¸ ìŠ¬ë¼ì´ë“œ í™”ë©´ ì´ë¯¸ì§€
+    document.getElementById('slide_img').src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename; // ìŠ¬ë¼ì´ë“œ ì²« í™”ë©´ ë³´ì—¬ì£¼ê¸°
+    document.getElementById('slide_i').value = '1'; // í˜„ì¬ í˜ì´ì§€ ìŠ¬ë¼ì´ë“œ ë²ˆí˜¸
     
     document.getElementById('download_path').setAttribute('href','.\\uploadStorage\\' + '${access_code}' + '\\' + file_name);
 });
@@ -1042,20 +1042,20 @@ sock.on('show_start', function (data) {
     'use strict';
     var i, filename;
 
-    slideshow_status = true; // ½½¶óÀÌµå¼î ÁøÇà »óÅÂ·Î º¯°æ
+    slideshow_status = true; // ìŠ¬ë¼ì´ë“œì‡¼ ì§„í–‰ ìƒíƒœë¡œ ë³€ê²½
     slideshow_file = data.file;
     slideshow_max = data.count;
     slideshow_index = 1;
 
     filename = slideshow_file + '-1.jpg';
 
-    slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename; // ½½¶óÀÌµå ÀÌ¹ÌÁö
-    document.getElementById('slide_i').value = '1'; // ÇöÀç ÀÎµ¦½º Ç¥½Ã
-    $('#len').html(slideshow_max); // ÃÑ ½½¶óÀÌµå Àå ¼ö
+    slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename; // ìŠ¬ë¼ì´ë“œ ì´ë¯¸ì§€
+    document.getElementById('slide_i').value = '1'; // í˜„ì¬ ì¸ë±ìŠ¤ í‘œì‹œ
+    $('#len').html(slideshow_max); // ì´ ìŠ¬ë¼ì´ë“œ ì¥ ìˆ˜
 
-    // ½½¶óÀÌµå¼î°¡ ÁøÇàµÇ´Â µ¿¾È ¸ŞÀÎ ½½¶óÀÌµå Á¦¾î ±ÇÇÑ Á¦°Å
+    // ìŠ¬ë¼ì´ë“œì‡¼ê°€ ì§„í–‰ë˜ëŠ” ë™ì•ˆ ë©”ì¸ ìŠ¬ë¼ì´ë“œ ì œì–´ ê¶Œí•œ ì œê±°
     $('#request_button').attr('onclick', 'c_Request()');
-    $('#request_button').attr('value', '±ÇÇÑ ¿äÃ»');
+    $('#request_button').attr('value', 'ê¶Œí•œ ìš”ì²­');
     $('#request_button').attr('style','display:block;');
 
     $('#next').attr('style', 'display:none;');
@@ -1064,7 +1064,7 @@ sock.on('show_start', function (data) {
     sub_slide_max = slideshow_max;
     sub_index = 1;
 
-    // ÇÏ´Ü ½½¶óÀÌµå ºä¾î
+    // í•˜ë‹¨ ìŠ¬ë¼ì´ë“œ ë·°ì–´
     $('#test').html('');
     for (i = 1; i <= slideshow_max; i += 1) {
         var file = './uploadStorage/' + '${access_code}' + '/' + slideshow_file + '-' + i + '.jpg';
@@ -1072,7 +1072,7 @@ sock.on('show_start', function (data) {
     }
     $('#pt_select').attr('style', 'width:0px;');
 
-    // ÇÏ´Ü ½½¶óÀÌµå È­¸é È°¼ºÈ­
+    // í•˜ë‹¨ ìŠ¬ë¼ì´ë“œ í™”ë©´ í™œì„±í™”
     $('#slide1').attr('style', 'display:block;');
     $('#before_p').attr('style', 'cursor: pointer; display:block;');
     $('#next_p').attr('style', 'cursor: pointer; display:block;');
@@ -1084,14 +1084,14 @@ sock.on('show_stop', function (data) {
 
     $(".button_group").html('');
 
-    slideshow_status = false; // ½½¶óÀÌµå¼î ÁøÇà »óÅÂ º¯°æ
+    slideshow_status = false; // ìŠ¬ë¼ì´ë“œì‡¼ ì§„í–‰ ìƒíƒœ ë³€ê²½
 
-    filename = file_name + '-' + slide_index + '.jpg'; // ½½¶óÀÌµå¼î ÁøÇàµÇ±â ÀÌÀüÀ¸·Î µ¹¾Æ°¡±â
+    filename = file_name + '-' + slide_index + '.jpg'; // ìŠ¬ë¼ì´ë“œì‡¼ ì§„í–‰ë˜ê¸° ì´ì „ìœ¼ë¡œ ëŒì•„ê°€ê¸°
     slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename;
     index = '#slide' + sub_index;
 
-    document.getElementById('slide_i').value = slide_index; // ½½¶óÀÌµå¼î ½ÃÀÛ ÀÌÀü¿¡ º¸´ø ½½¶óÀÌµå ÀÎµ¦½º
-    $('#len').html(slide_max); // ÃÑ ½½¶óÀÌµå Àå ¼ö
+    document.getElementById('slide_i').value = slide_index; // ìŠ¬ë¼ì´ë“œì‡¼ ì‹œì‘ ì´ì „ì— ë³´ë˜ ìŠ¬ë¼ì´ë“œ ì¸ë±ìŠ¤
+    $('#len').html(slide_max); // ì´ ìŠ¬ë¼ì´ë“œ ì¥ ìˆ˜
 
     $('#pt_select').attr('style', 'width:80px;');
 
@@ -1120,7 +1120,7 @@ sock.on('signalFlag', function (data) {
     'use strict';
     var contents;
     if (user_type !== 'host') {
-        if (data.userid === u_id) { // Á¢¼ÓÇÑ Âü¿©ÀÚ
+        if (data.userid === u_id) { // ì ‘ì†í•œ ì°¸ì—¬ì
             meeting.setInRtc(data.result);
             if (!data.result) {
                 contents = document.getElementById('self');
@@ -1140,7 +1140,7 @@ sock.on('signalFlag', function (data) {
                     document.getElementById('mediaBox2').style.display = 'block';
                 }
             }
-        } else { // ³ª¸ÓÁö
+        } else { // ë‚˜ë¨¸ì§€
             trySignalActive = data.available;
         }
     }
@@ -1167,43 +1167,43 @@ sock.on('syncPoint', function (data) {
     }
 });
 
-//±ÇÇÑ ¿äÃ»
+//ê¶Œí•œ ìš”ì²­
 sock.on('c_request', function (data) {
     var id;
     if(user_type === 'host') {
-        request_list.push(data.from); // ±ÇÇÑ ¿äÃ» ¸®½ºÆ® 
-        if(request_user!=null) { // ±ÇÇÑ È¹µæÇÑ »ç¿ëÀÚ°¡ ÀÖÀ½
+        request_list.push(data.from); // ê¶Œí•œ ìš”ì²­ ë¦¬ìŠ¤íŠ¸ 
+        if(request_user!=null) { // ê¶Œí•œ íšë“í•œ ì‚¬ìš©ìê°€ ìˆìŒ
             id = '#' + data.from + '_btn';
-            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" disabled=\"true\" value=\"¼ö¶ô\" onclick=\"c_Accept(\'' + data.from + '\')\"/>');
-            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" disabled=\"true\" value=\"°ÅÀı\" onclick=\"refuse(\''+ data.from + '\')\"/>');
-        } else { // ±ÇÇÑÀ» È¹µæÇÑ »ç¿ëÀÚ°¡ ¾øÀ½
+            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" disabled=\"true\" value=\"ìˆ˜ë½\" onclick=\"c_Accept(\'' + data.from + '\')\"/>');
+            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" disabled=\"true\" value=\"ê±°ì ˆ\" onclick=\"refuse(\''+ data.from + '\')\"/>');
+        } else { // ê¶Œí•œì„ íšë“í•œ ì‚¬ìš©ìê°€ ì—†ìŒ
             id = '#' + data.from + '_btn';
-            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" value=\"¼ö¶ô\" onclick=\"c_Accept(\'' + data.from + '\')\"/>');
-            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" value=\"°ÅÀı\" onclick=\"refuse(\''+ data.from + '\')\"/>');
+            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" value=\"ìˆ˜ë½\" onclick=\"c_Accept(\'' + data.from + '\')\"/>');
+            $(id).append('<input type=\"button\" style=\"float:right; font-size:0.8em;\" value=\"ê±°ì ˆ\" onclick=\"refuse(\''+ data.from + '\')\"/>');
         }
     }  
 });
 
-//±ÇÇÑ ¼ö¶ô
+//ê¶Œí•œ ìˆ˜ë½
 sock.on('c_accept', function (data) {
     var id;
-    if(data.receiver === u_id) { // ±ÇÇÑÀ» ºÎ¿©¹ŞÀº Âü¿©ÀÚ
-        // ½½¶óÀÌµå ÅëÁ¦±Ç ÁÖ±â
+    if(data.receiver === u_id) { // ê¶Œí•œì„ ë¶€ì—¬ë°›ì€ ì°¸ì—¬ì
+        // ìŠ¬ë¼ì´ë“œ í†µì œê¶Œ ì£¼ê¸°
         $('#request_button').attr('onclick', 'Request_stop(\''+ u_id +'\')');
-        $('#request_button').attr('value', '±ÇÇÑ Á¾·á');
+        $('#request_button').attr('value', 'ê¶Œí•œ ì¢…ë£Œ');
         $('#next').attr('style', 'display:block;');
         $('#before').attr('style', 'display:block;');
     } else {
         id = '#' + data.receiver + '_btn';
-        $(id).html('(±ÇÇÑ È¹µæ)');
+        $(id).html('(ê¶Œí•œ íšë“)');
     }
 });
 
-//±ÇÇÑ ¿äÃ» Á¾·á
+//ê¶Œí•œ ìš”ì²­ ì¢…ë£Œ
 sock.on('request_stop', function (data) {
     if(data.receiver === u_id) {
         $('#request_button').attr('onclick', 'c_Request()');
-        $('#request_button').attr('value', '±ÇÇÑ ¿äÃ»');
+        $('#request_button').attr('value', 'ê¶Œí•œ ìš”ì²­');
 
         $('#next').attr('style', 'display:none;');
         $('#before').attr('style', 'display:none;');
@@ -1227,7 +1227,7 @@ sock.on('request_stop', function (data) {
     }
 });
 
-//±ÇÇÑ ¿äÃ» ÁßÁö
+//ê¶Œí•œ ìš”ì²­ ì¤‘ì§€
 sock.on('request_cancel', function (data) {
     var id,index;
     if(user_type === 'host') {
@@ -1239,16 +1239,16 @@ sock.on('request_cancel', function (data) {
     }
 });
 
-//±ÇÇÑ °ÅÀı
+//ê¶Œí•œ ê±°ì ˆ
 sock.on('refuse', function (data) {
     if(data.receiver === u_id) {
-        alert('±ÇÇÑ ¿äÃ»ÀÌ °ÅºÎµÇ¾ú½À´Ï´Ù.');
+        alert('ê¶Œí•œ ìš”ì²­ì´ ê±°ë¶€ë˜ì—ˆìŠµë‹ˆë‹¤.');
         $('#request_button').attr('onclick', 'c_Request()');
-        $('#request_button').attr('value', '±ÇÇÑ ¿äÃ»');
+        $('#request_button').attr('value', 'ê¶Œí•œ ìš”ì²­');
     }
 });
 
-//¹æÁ¤º¸ ÃÊ±âÈ­
+//ë°©ì •ë³´ ì´ˆê¸°í™”
 sock.on('tryRoomInfo', function (data) {
     if (user_type === 'host' && slideshow_status) {
         meeting.tryRoomInfo(hash, data.userid, slideshow_file, slideshow_index, slideshow_max, canvas.style.display, pageList);
@@ -1261,10 +1261,10 @@ sock.on('tryRoomInfo', function (data) {
            filename = slideshow_file + '-' + slideshow_index + '.jpg';
         slide_img.src = '.\\uploadStorage\\' + '${access_code}' + '\\' + filename;
         document.getElementById('slide_i').value = slideshow_index;
-        $('#len').html(slideshow_max); // ÃÑ ½½¶óÀÌµå Àå ¼ö
+        $('#len').html(slideshow_max); // ì´ ìŠ¬ë¼ì´ë“œ ì¥ ìˆ˜
         
         $('#request_button').attr('onclick', 'c_Request()');
-        $('#request_button').attr('value', '±ÇÇÑ ¿äÃ»');
+        $('#request_button').attr('value', 'ê¶Œí•œ ìš”ì²­');
         $('#request_button').attr('style','display:block;');
         $('#pt_select').attr('style', 'width:0px;');
         $('#next').attr('style', 'display:none;');
@@ -1274,14 +1274,14 @@ sock.on('tryRoomInfo', function (data) {
         sub_index = 1;
         sub_slide_max = slideshow_max;
             
-        // ÇÏ´Ü ½½¶óÀÌµå ºä¾î
+        // í•˜ë‹¨ ìŠ¬ë¼ì´ë“œ ë·°ì–´
         $('#test').html('');
         for (var i = 1; i <= slideshow_max; i += 1) {
             var file = './uploadStorage/' + '${access_code}' + '/' + slideshow_file + '-' + i + '.jpg';
             $('#test').append('<img id=\"slide'+i+'" style=\"display:none;\" class=\"slide_prev\" src=\"' + file + '\" />');
         }
 
-        // ÇÏ´Ü ½½¶óÀÌµå È­¸é È°¼ºÈ­
+        // í•˜ë‹¨ ìŠ¬ë¼ì´ë“œ í™”ë©´ í™œì„±í™”
         $('#slide1').attr('style', 'display:block;');
         $('#before_p').attr('style', 'cursor: pointer; display:block;');
         $('#next_p').attr('style', 'cursor: pointer; display:block;');
