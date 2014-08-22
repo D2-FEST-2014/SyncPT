@@ -7,10 +7,11 @@ Sync PT
 
 Features
 --------
- * presentation synchronizing.
- * chat
- * upload ppt and convert to img
- * point on ppt with check, star mark
+ * Presentation Synchronize.
+ * Chat
+ * Upload/Download .ppt(.pptx, .pdf) and Convert to Image(.jpg)
+ * InkPointer on Presentation with undo, redo, clear, hide
+ * 
  * etc..
 
 To do List
@@ -19,5 +20,5 @@ To do List
  * turn over presentation control permission
  
 License
--------
+--------
 Distributed under Apache License v2.0

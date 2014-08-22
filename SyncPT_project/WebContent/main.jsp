@@ -500,9 +500,6 @@ footer {
       width: 40%;
       height: 100%;
    }
-   #roomTitle{
-      display: none;
-   }
 }
 </style>
 <meta charset="UTF-8">
@@ -635,10 +632,10 @@ function addInput(divName) {
                      <div style="float: left; width: 50%; font-size: 1.25em; font-weight: bold;">
                         <div>방 공개 여부</div>
                         <div>
-                           <input type="radio" name="isopen" id="close" value="0" checked="checked" onclick="openChange(this)" />
-                           <label for="close">비공개</label>
-                           <input type="radio" name="isopen" id="open" value="1" onclick="openChange(this)" />
+                           <input type="radio" name="isopen" id="open" value="1" checked="checked" onclick="openChange(this)" />
                            <label for="open">공개</label>
+                           <input type="radio" name="isopen" id="close" value="0" onclick="openChange(this)" />
+                           <label for="close">비공개</label>
                         </div>
                         <div id="roomTitle">
                            <span>방 제목</span><input type="text" class="accessBox" id="roomTxt" name="room_name" style="font-size: 1em;"/>
