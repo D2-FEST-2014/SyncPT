@@ -88,6 +88,9 @@
             };
 
             peer.createOffer(function (sdp) {
+            	// bandwidth attr 조절 audio = 50kbit/s, video = 256kbit/s
+            	sdp.sdp = sdp.sdp.replace(/a=mid:audio\r\n/g, 'a=mid:audio\r\nb=AS:50\r\n');
+                sdp.sdp = sdp.sdp.replace(/a=mid:video\r\n/g, 'a=mid:video\r\nb=AS:256\r\n');
                 peer.setLocalDescription(sdp);
                 config.onsdp(sdp, config.to);
             }, onSdpError, offerAnswerConstraints);
@@ -127,6 +130,9 @@
 
             peer.setRemoteDescription(new RTCSessionDescription(config.sdp), onSdpSuccess, onSdpError);
             peer.createAnswer(function (sdp) {
+            	// bandwidth attr 조절 audio = 50kbit/s, video = 256kbit/s
+            	sdp.sdp = sdp.sdp.replace(/a=mid:audio\r\n/g, 'a=mid:audio\r\nb=AS:50\r\n');
+                sdp.sdp = sdp.sdp.replace(/a=mid:video\r\n/g, 'a=mid:video\r\nb=AS:128\r\n');
                 peer.setLocalDescription(sdp);
                 config.onsdp(sdp, config.to);
             }, onSdpError, offerAnswerConstraints);
@@ -519,7 +525,7 @@
                         contents.muted = false;
                         contents.volume = 1;
                         afterRemoteStreamStartedFlowing();
-                    }, 3000);
+                    }, (1000 * 5));
                 }, false);
 
                 contents.play();
