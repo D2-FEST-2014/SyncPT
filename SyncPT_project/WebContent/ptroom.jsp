@@ -1,5 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,9 +36,9 @@
 							</c:choose>
 						</div>
 						<div style="width: 100%; height: 93%; padding: 2%; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.4); position: relative;">
-							<div style="color: cornflowerblue;">
+							<div style="width:100%; color: cornflowerblue;">
 								<div>파일 선택</div>
-								<div>
+								<div style="width: 100%;">
 									<select id="pt_select" onchange="Select_PPT(this.value)" style="width:100%; height:3vmin;">
 										<c:set var="index" value="0"></c:set>
 										<c:forEach var="Row" items="${fileList}">
@@ -169,7 +169,7 @@
 		<div id="content_area">
 			<div class="slide_area">
 				<div class="image_cell">
-					<img id="slide_img" src="./image/prev.png" alt="Slide Image" />
+					<img id="slide_img" src="./image/prev.png" alt="Slide Image"  />
 					<canvas id="can" style="position: absolute; z-index: 70; box-sizing: border-box; border: 1px solid red; display: block;">
 					</canvas>
 				</div>
@@ -177,7 +177,7 @@
 			<div id="chat_wrap">				
 				<div id="chat_area">
 					<div style="width: 100%; height: 100%; padding-bottom: 30px; box-sizing: border-box;">
-						<div id="chat_a" style="overflow-y: scroll; width: 100%; height: 100%; padding: 0 32px; border: 0; background-color: transparent; color: white; text-shadow: 1px 1px 0px darkgray;">
+						<div id="chat_a" style="width: 100%; height: 100%; padding: 0 32px; border: 0; box-sizing:border-box; background-color: transparent; color: white; text-shadow: 1px 1px 0px darkgray;">
 						</div>
 					</div>
 					<div style="width: 100%; height: 30px; position: relative; bottom: 30px; background-color: rgba(0, 0, 0, 0.1);">
@@ -239,8 +239,9 @@ var user_type = '${u_type}';
 var slideshow_status = false; // 슬라이드쇼 진행상태 
 var slideshow_file; // 슬라이드쇼 진행되는 파일 이름
 var slideshow_index = 1; // 슬라이드쇼 인덱스 
-var slideshow_max; // 슬라이드쇼 파일 슬라이드 장 수
+var slideshow_max = '${slide_count}'; // 슬라이드쇼 파일 슬라이드 장 수
 
+var control_flag = false;
 var file_name = '${file_name}'; // 사용자가 선택한 파일 이름 
 var slide_max = '${slide_count}'; // 선택한 파일 슬라이드의 전체 수   
 var slide_index = 1; // 메인 뷰어 슬라이드 인덱스
@@ -417,24 +418,46 @@ $('#full_button').click(function () {
         $('#full_button').attr('src', './image/full.png');
     }
 });
-$('#chat').keypress(function (e) { //크롬 브라우저 esc이벤트 1회 무시 방지 (이미지 토글 안됨 방지)
+$('#chat').keypress(function (e) {
     'use strict';
     if (e.keyCode === 13) {
         Chat_msg();
     }
+    if (e.keyCode === 37){}
+    if (e.keyCode === 39){}
+    
+    
 });
+
 
 $(document).keyup(function (e) { //크롬 브라우저 esc이벤트 1회 무시 방지 (이미지 토글 안됨 방지)
     'use strict';
     if (e.keyCode === 27) {
         $('#full_button').attr('src', './image/full.png');
     }
+    
+    
 });
 $(document).keydown(function (e) { //f11 전체화면 무시 (토글 이미지 및 screenfull.js 버그 방지)
     'use strict';
     if (e.keyCode === 122) {
         e.preventDefault();
     }
+    
+    if (e.keyCode === 37) {
+    	if(user_type === 'host' || control_flag) {
+    		e.preventDefault();
+       	 	Slide_pre();
+    	}
+   	 	
+   }
+   if (e.keyCode === 39) {
+	   if(user_type === 'host' || control_flag) {
+		   e.preventDefault();
+	   	 	Slide_next();
+   		}
+   	 	
+   }   
 });
 canvas.addEventListener("mousemove", function (e) {
     getPosition('move', e);
@@ -465,8 +488,8 @@ function initCanvasPage() {
     'use strict';
     var i;
     pageList = {};
-    pageList.length = slide_max+1;
-    for (i = 1; i <= slide_max; i += 1) {
+    pageList.length = slideshow_max + 1;
+    for (i = 1; i <= slideshow_max; i += 1) {
         pageList[i] = {};
         pageList[i].length = 0;
         pageList[i].lineIndex = -1;
@@ -731,7 +754,6 @@ function Slide_pre() {
     'use strict';
     var filename, index;
     index = document.getElementById('slide_i').value;
-
     if (parseInt(index, 10) > 1) {
         index = parseInt(index, 10) - 1;                   
         
@@ -841,6 +863,7 @@ function Slide_show() {
     $('#before_p').attr('style', 'cursor: pointer; display:block;');
     $('#next_p').attr('style', 'cursor: pointer; display:block;');
     
+    initCanvasPage();
     // room,file,type
     meeting.slideShow(hash, file_name, slideshow_status);
 }
@@ -1076,6 +1099,8 @@ sock.on('show_start', function (data) {
     $('#slide1').attr('style', 'display:block;');
     $('#before_p').attr('style', 'cursor: pointer; display:block;');
     $('#next_p').attr('style', 'cursor: pointer; display:block;');
+    
+    initCanvasPage();
 });
 
 sock.on('show_stop', function (data) {
@@ -1188,6 +1213,7 @@ sock.on('c_request', function (data) {
 sock.on('c_accept', function (data) {
     var id;
     if(data.receiver === u_id) { // 권한을 부여받은 참여자
+    	control_flag = true;
         // 슬라이드 통제권 주기
         $('#request_button').attr('onclick', 'Request_stop(\''+ u_id +'\')');
         $('#request_button').attr('value', '권한 종료');
@@ -1202,6 +1228,7 @@ sock.on('c_accept', function (data) {
 //권한 요청 종료
 sock.on('request_stop', function (data) {
     if(data.receiver === u_id) {
+    	control_flag = false;
         $('#request_button').attr('onclick', 'c_Request()');
         $('#request_button').attr('value', '권한 요청');
 
